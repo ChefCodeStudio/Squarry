@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Squarry</string>
+    <string name="app_name">FastTouch</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    
+    <string name="game_face_description">Game Face</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="final_score">Final Score: </string>
+    <string name="restart">Restart</string>
+    <string name="higscore">Highscore: </string>
+    <string name="start">Start</string>
+    <string name="sound">Sound</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="game_start_description">Start Game Button</string>
+    <string name="game_sound_description">Sound Game Button</string>
+    <string name="game_repeat_description">Repeat Game Button</string>
+    <string name="settings_description">Settings</string>
+    <string name="settings_audio">Audio</string>
+    <string name="close_description">Close</string>
 </resources>
