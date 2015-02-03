@@ -50,6 +50,7 @@ public class GameOverActivity extends Activity {
 	public MediaPlayer mp_gameover;
 	
 	private InterstitialAd interstitialAd;
+	AdView adView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,7 @@ public class GameOverActivity extends Activity {
 		interstitialAd = new InterstitialAd(GameOverActivity.this);
 		interstitialAd.setAdUnitId("ca-app-pub-3204051552386925/4131791496");
 		
-		AdView adView = (AdView)this.findViewById(R.id.adViewGameOver);
+		adView = (AdView)this.findViewById(R.id.adViewGameOver);
 		AdRequest adRequest = new AdRequest.Builder()
 		    .build();
 		
@@ -124,4 +125,25 @@ public class GameOverActivity extends Activity {
 		Intent intent = new Intent(GameOverActivity.this, StartActivity.class);
 		startActivity(intent);
 	}
+	
+	@Override
+    public void onResume() {
+        super.onResume();
+        // Resume the AdView.
+        adView.resume();
+    }
+
+    @Override
+    public void onPause() {
+        // Pause the AdView.
+    	adView.pause();
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        // Destroy the AdView.
+    	adView.destroy();
+        super.onDestroy();
+    }
 }

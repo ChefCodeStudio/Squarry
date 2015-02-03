@@ -246,4 +246,23 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(MainActivity.this, StartActivity.class);
 		startActivity(intent);
 	}
+	
+	@Override
+    public void onResume() {
+		Intent intent = new Intent(MainActivity.this, StartActivity.class);
+		startActivity(intent);
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+		timer.cancel();
+		handler.removeCallbacks(runnable);
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }
