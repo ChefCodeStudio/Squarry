@@ -135,6 +135,8 @@ public class GameOverActivity extends Activity {
 
     @Override
     public void onPause() {
+    	mp_gameover.stop();
+    	
         // Pause the AdView.
     	adView.pause();
         super.onPause();
