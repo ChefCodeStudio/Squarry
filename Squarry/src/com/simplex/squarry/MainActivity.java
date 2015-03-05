@@ -5,6 +5,7 @@ import java.util.Random;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -23,6 +24,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -153,7 +155,12 @@ public class MainActivity extends Activity {
 	 * Start the timer
 	 */
 	private void startTimer() {
-		timer = new CounterClass(6000, 1000);
+		if (level == 1) {
+			timer = new CounterClass(8000, 1000);
+		} else {
+			timer = new CounterClass(6000, 1000);
+		}
+
 		timer.start();
 		handler.postDelayed(runnable, 4500);
 	}
@@ -209,6 +216,13 @@ public class MainActivity extends Activity {
 			
 			if (level > 1) {
 				relativeLayout.startAnimation(animationFadeIn);
+			} else {
+				Context context = getApplicationContext();
+				CharSequence text = "Remove the Squarry Faces in time.";
+				int duration = Toast.LENGTH_LONG;
+				
+				Toast toast = Toast.makeText(context, text, duration);
+				toast.show();
 			}
 		}
 	}
